@@ -1,6 +1,5 @@
 package com.devsuperior.dslearnbds.entities;
 
-import org.springframework.core.io.Resource;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -20,7 +19,7 @@ public class Section implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "resource_id")
-    private Resource resource;
+    public Resourcer resource;
 
     @ManyToOne
     @JoinColumn(name = "prerequisite_id")
@@ -29,13 +28,14 @@ public class Section implements Serializable {
     public Section() {
     }
 
-    public Section(Long id, String title, String description, Integer position, String imgUri, Resource resource, Section prerequisite) {
+
+    public Section(Long id, String title, String description, Integer position, String imgUri, Resourcer resourcer, Section prerequisite) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.position = position;
         this.imgUri = imgUri;
-        this.resource = resource;
+        this.resource = resourcer;
         this.prerequisite = prerequisite;
     }
 
@@ -79,12 +79,12 @@ public class Section implements Serializable {
         this.imgUri = imgUri;
     }
 
-    public Resource getResource() {
+    public Resourcer getResourcer() {
         return resource;
     }
 
-    public void setResource(Resource resource) {
-        this.resource = resource;
+    public void setResourcer(Resourcer resourcer) {
+        this.resource = resourcer;
     }
 
     public Section getPrerequisite() {

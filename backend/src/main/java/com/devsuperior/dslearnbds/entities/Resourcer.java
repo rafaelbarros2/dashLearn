@@ -10,7 +10,7 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "tb_resource")
-public class Resource implements Serializable {
+public class Resourcer implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,10 +28,10 @@ public class Resource implements Serializable {
     @OneToMany(mappedBy = "resource")
     private List<Section> sections = new ArrayList<>();
 
-    public Resource() {
+    public Resourcer() {
     }
 
-    public Resource(Long id, String title, String description, Integer position, String imgUri, ResourceType type, Offer offer) {
+    public Resourcer(Long id, String title, String description, Integer position, String imgUri, ResourceType type, Offer offer) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -100,8 +100,8 @@ public class Resource implements Serializable {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Resource)) return false;
-        Resource resource = (Resource) o;
+        if (!(o instanceof Resourcer)) return false;
+        Resourcer resource = (Resourcer) o;
         return getId().equals(resource.getId());
     }
 

@@ -14,15 +14,22 @@ public class Course implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String imgUrl;
+    private String imgUri;
     private String imgGrayUri;
 
     @OneToMany(mappedBy = "course")
     private List<Offer> offers = new ArrayList<>();
 
 
-
     public Course() {
+    }
+
+    public Course(Long id, String name, String imgUri, String imgGrayUri, List<Offer> offers) {
+        this.id = id;
+        this.name = name;
+        this.imgUri = imgUri;
+        this.imgGrayUri = imgGrayUri;
+        this.offers = offers;
     }
 
     public Long getId() {
@@ -42,11 +49,11 @@ public class Course implements Serializable {
     }
 
     public String getImgUrl() {
-        return imgUrl;
+        return imgUri;
     }
 
     public void setImgUrl(String imgUrl) {
-        this.imgUrl = imgUrl;
+        this.imgUri = imgUri;
     }
 
     public String getImgGrayUri() {

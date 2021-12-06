@@ -7,30 +7,30 @@ import javax.persistence.Table;
 @Table(name = "tb_content")
 public class Content extends Lesson{
 
-    private String testContent;
+    private String textContent;
     private String videoUri;
 
     public Content() {
     }
 
 
-    public Content(String testContent, String videoUri) {
-        this.testContent = testContent;
+    public Content(String textContent, String videoUri) {
+        this.textContent = textContent;
         this.videoUri = videoUri;
     }
 
-    public Content(Long id, String title, Integer position, Section section, String testContent, String videoUri) {
+    public Content(Long id, String title, Integer position, Section section, String textContent, String videoUri) {
         super(id, title, position, section);
-        this.testContent = testContent;
+        this.textContent = textContent;
         this.videoUri = videoUri;
     }
 
     public String getTestContent() {
-        return testContent;
+        return textContent;
     }
 
     public void setTestContent(String testContent) {
-        this.testContent = testContent;
+        this.textContent = testContent;
     }
 
     public String getVideoUri() {

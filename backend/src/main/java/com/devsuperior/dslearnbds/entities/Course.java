@@ -17,7 +17,7 @@ public class Course implements Serializable {
     private String imgUrl;
     private String imgGrayUri;
 
-
+    @OneToMany(mappedBy = "course")
     private List<Offer> offers = new ArrayList<>();
 
     public Course() {

@@ -1,7 +1,9 @@
 package com.devsuperior.dslearnbds.repositories;
 
-import com.devsuperior.dslearnbds.entities.Resourcer;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface ResourceRepository extends JpaRepository<Resourcer, Long> {
+import com.devsuperior.dslearnbds.entities.Resource;
+
+public interface ResourceRepository extends JpaRepository<Resource, Long> {
+
 }

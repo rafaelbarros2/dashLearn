@@ -19,9 +19,9 @@ public class NotificationResource {
 	private NotificationService service;
 	
 	@GetMapping
-	public ResponseEntity<Page<NotificationDTO>> notificationsForCurrentUser(Pageable pageable) {
+	public ResponseEntity<Page<NotificationDTO>> notificationsForCurrentUser(boolean unReadOnly, Pageable pageable) {
 		
-		Page<NotificationDTO> page = service.notificationsForCurrentUser(pageable);		
+		Page<NotificationDTO> page = service.notificationsForCurrentUser(unReadOnly,pageable);
 		return ResponseEntity.ok().body(page);
 	}
 }
